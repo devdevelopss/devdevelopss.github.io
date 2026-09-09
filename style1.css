@@ -8,23 +8,383 @@
 
 .modal{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:22px}.modal.open{display:flex}.shade{position:absolute;inset:0;background:#28333372;backdrop-filter:blur(7px)}.modalbox{position:relative;z-index:2;width:min(560px,100%);background:#fffdf9;border-radius:22px;padding:31px;box-shadow:0 30px 80px #28333330}.close{position:absolute;right:18px;top:15px;border:0;background:#f3f0ea;width:33px;height:33px;border-radius:50%;font-size:22px;cursor:pointer}.modalbox h2{font:600 39px 'Playfair Display';margin:12px 0 20px}.modalview{height:245px;border-radius:14px;background:#e7f0eb;padding:31px}.modalview small{font-size:8px;letter-spacing:.14em;color:#617b6e;font-weight:700}.modalview strong{display:block;font:600 42px/1.05 'Playfair Display';margin:15px 0}.modalview i{font-style:normal;color:#617b6e}.modalview button{border:0;background:#283333;color:#fff;padding:9px 13px;border-radius:8px;font-size:9px}.modalbox>p:not(.eyebrow){font-size:12px;color:#717977}.mobile{max-height:0;overflow:hidden;padding:0 22px;transition:.3s}.mobile.open{max-height:150px;padding:7px 22px 15px}.mobile a{display:block;padding:6px;color:#717977;font-size:12px}
 
-@media(max-width:900px){.nav nav{display:none}.navbtn{margin-left:auto}.menu{display:block;border:0;background:transparent;font-size:22px;cursor:pointer}.hero{grid-template-columns:1fr;padding:65px 22px 80px}.art{min-height:440px}.heading{grid-template-columns:1fr;gap:15px}.grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:24px;padding:75px 22px}}
-@media(max-width:600px){.nav{padding:15px 20px}.navbtn{display:none}.hero h1{font-size:58px}.intro{font-size:15px}.art{min-height:400px}.browser{width:92%}.c1{width:300px;height:300px}.float{transform:scale(.9)}.grid{grid-template-columns:1fr}.themes{padding:75px 22px 85px}.heading h2,.about h2{font-size:43px}.modalbox{padding:25px}.modalview{height:220px}.modalview strong{font-size:34px}footer{padding:22px;flex-direction:column;gap:8px}}
+/* ==========================
+   RESPONSIVE DESIGN
+   Desktop → Tablet → Mobile
+========================== */
+
+/* Large Desktop */
+@media (min-width: 1201px) {
+    .hero,
+    .themes {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .hero h1 {
+        font-size: clamp(70px, 7vw, 100px);
+    }
+}
 
 
+/* Tablet */
+@media (max-width: 1100px) {
+
+    .nav {
+        padding: 16px 24px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 35px;
+        padding: 75px 24px 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 7vw, 78px);
+    }
+
+    .art {
+        min-height: 430px;
+    }
+
+    .c1 {
+        width: 330px;
+        height: 330px;
+    }
+
+    .browser {
+        width: min(400px, 95%);
+    }
+
+    .themes {
+        padding: 80px 24px 90px;
+    }
+
+    .heading {
+        gap: 35px;
+    }
+
+    .about {
+        padding: 80px 24px;
+        gap: 45px;
+    }
+}
+
+
+/* Tablet / Small Tablet */
+@media (max-width: 900px) {
+
+    .nav nav {
+        display: none;
+    }
+
+    .navbtn {
+        margin-left: auto;
+    }
+
+    .menu {
+        display: block;
+        border: 0;
+        background: transparent;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 22px 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 9vw, 72px);
+    }
+
+    .intro {
+        max-width: 680px;
+    }
+
+    .art {
+        min-height: 440px;
+        margin-top: 10px;
+    }
+
+    .heading {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 75px 22px;
+    }
+
+    .aboutmark {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cta {
+        padding: 90px 22px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .nav {
+        padding: 14px 18px;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 19px;
+        gap: 5px;
+    }
+
+    .brand-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .navbtn {
+        display: none;
+    }
+
+    .menu {
+        margin-left: auto;
+        font-size: 24px;
+    }
+
+    .mobile.open {
+        max-height: 180px;
+    }
+
+    .hero {
+        padding: 55px 20px 65px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 13vw, 60px);
+        line-height: .98;
+        margin: 15px 0;
+    }
+
+    .intro,
+    .lead {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .art {
+        min-height: 350px;
+        margin-top: 15px;
+    }
+
+    .c1 {
+        width: 270px;
+        height: 270px;
+        right: 0;
+        top: 25px;
+    }
+
+    .c2 {
+        width: 100px;
+        height: 100px;
+        left: 0;
+        bottom: 20px;
+    }
+
+    .c3 {
+        width: 50px;
+        height: 50px;
+        left: 25px;
+        top: 20px;
+    }
+
+    .browser {
+        width: 94%;
+        border-radius: 15px;
+    }
+
+    .bar {
+        height: 35px;
+    }
+
+    .screen {
+        padding: 22px;
+        min-height: 280px;
+    }
+
+    .screen h2 {
+        font-size: 34px;
+    }
+
+    .blocks {
+        margin-top: 25px;
+    }
+
+    .blocks b {
+        height: 40px;
+    }
+
+    .float {
+        padding: 9px 11px;
+        transform: scale(.82);
+    }
+
+    .f1 {
+        right: -5px;
+        top: 35px;
+    }
+
+    .f2 {
+        left: -5px;
+        bottom: 20px;
+    }
+
+    .themes {
+        padding: 65px 20px 75px;
+    }
+
+    .heading h2,
+    .about h2 {
+        font-size: clamp(38px, 11vw, 48px);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .preview {
+        height: 250px;
+    }
+
+    .info {
+        padding: 18px;
+    }
+
+    .info h3 {
+        font-size: 20px;
+    }
+
+    .about {
+        padding: 65px 20px;
+    }
+
+    .aboutmark {
+        width: 115px;
+        height: 115px;
+    }
+
+    .principles {
+        flex-direction: column;
+    }
+
+    .principles div {
+        width: 100%;
+    }
+
+    .cta {
+        padding: 75px 20px;
+    }
+
+    .cta h2 {
+        font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .cta-contact {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-contact .btn {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+    }
+
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+
+/* Very Small Mobile */
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .art {
+        min-height: 310px;
+    }
+
+    .screen {
+        min-height: 250px;
+        padding: 18px;
+    }
+
+    .screen h2 {
+        font-size: 29px;
+    }
+
+    .float {
+        transform: scale(.72);
+    }
+
+    .cta-contact .btn {
+        max-width: 230px;
+    }
+}
 
 /* Company Logo */
 .brand {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 7px;
 }
 
 .brand-logo {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
     display: block;
+    flex-shrink: 0;
 }
 
 .aboutmark {
@@ -60,14 +420,4 @@
 
 .cta-contact .btn i {
     font-size: 14px;
-}
-
-@media (max-width: 600px) {
-    .cta-contact {
-        flex-direction: column;
-    }
-
-    .cta-contact .btn {
-        width: 210px;
-    }
 }
