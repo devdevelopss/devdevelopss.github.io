@@ -28,6 +28,13 @@
 
 
 /* Tablet */
+/* ==========================
+   RESPONSIVE DESIGN
+   Same Interface — Scaled
+========================== */
+
+/* ---------- TABLET ---------- */
+
 @media (max-width: 1100px) {
 
     .nav {
@@ -69,17 +76,27 @@
         padding: 80px 24px;
         gap: 45px;
     }
+
+    .cta {
+        padding: 90px 24px;
+    }
 }
 
 
-/* Tablet / Small Tablet */
+/* ---------- TABLET / SMALL LAPTOP ---------- */
+
 @media (max-width: 900px) {
+
+    .nav {
+        padding: 15px 22px;
+    }
 
     .nav nav {
         display: none;
     }
 
     .navbtn {
+        display: inline-flex;
         margin-left: auto;
     }
 
@@ -100,13 +117,8 @@
         font-size: clamp(52px, 9vw, 72px);
     }
 
-    .intro {
-        max-width: 680px;
-    }
-
     .art {
         min-height: 440px;
-        margin-top: 10px;
     }
 
     .heading {
@@ -114,8 +126,10 @@
         gap: 15px;
     }
 
+    /* KEEP TWO CARDS PER ROW */
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 
     .about {
@@ -124,116 +138,104 @@
         padding: 75px 22px;
     }
 
-    .aboutmark {
-        width: 120px;
-        height: 120px;
+    .cta {
+        padding: 85px 22px;
     }
 
-    .cta {
-        padding: 90px 22px;
+    .cta h2 {
+        font-size: clamp(42px, 7vw, 60px);
     }
 }
 
 
-/* Mobile */
+/* ---------- MOBILE ----------
+   Same structure as tablet
+   Only scaled down
+------------------------------- */
+
 @media (max-width: 600px) {
 
     .nav {
-        padding: 14px 18px;
-        gap: 12px;
+        padding: 12px 16px;
+        gap: 8px;
     }
 
+    /* Logo scales down */
     .brand {
-        font-size: 19px;
+        font-size: clamp(16px, 4.5vw, 20px);
         gap: 5px;
+        min-width: 0;
     }
 
     .brand-logo {
-        width: 46px;
-        height: 46px;
+        width: clamp(38px, 10vw, 48px);
+        height: clamp(38px, 10vw, 48px);
     }
 
-@media (max-width: 600px) {
+    /* Contact button remains visible */
     .navbtn {
         display: inline-flex;
-        padding: 8px 11px;
-        font-size: 10px;
+        padding: 8px 10px;
+        font-size: 9px;
         white-space: nowrap;
+        flex-shrink: 0;
     }
-}
 
     .menu {
-        margin-left: auto;
-        font-size: 24px;
+        font-size: 21px;
+        flex-shrink: 0;
     }
 
-    .mobile.open {
-        max-height: 180px;
-    }
-
+    /* Hero */
     .hero {
-        padding: 55px 20px 65px;
-    }
-
-    .eyebrow {
-        font-size: 9px;
+        padding: 50px 18px 65px;
     }
 
     .hero h1 {
-        font-size: clamp(45px, 13vw, 60px);
+        font-size: clamp(44px, 12vw, 60px);
         line-height: .98;
-        margin: 15px 0;
     }
 
     .intro,
     .lead {
-        font-size: 14px;
+        font-size: clamp(13px, 3.6vw, 15px);
         line-height: 1.75;
     }
 
     .actions {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .actions .btn {
-        width: 100%;
+        flex: 1;
+        min-width: 150px;
         justify-content: center;
     }
 
+    /* Hero artwork */
     .art {
         min-height: 350px;
-        margin-top: 15px;
     }
 
     .c1 {
         width: 270px;
         height: 270px;
-        right: 0;
-        top: 25px;
     }
 
     .c2 {
         width: 100px;
         height: 100px;
-        left: 0;
-        bottom: 20px;
     }
 
     .c3 {
         width: 50px;
         height: 50px;
-        left: 25px;
-        top: 20px;
     }
 
     .browser {
         width: 94%;
-        border-radius: 15px;
-    }
-
-    .bar {
-        height: 35px;
     }
 
     .screen {
@@ -242,166 +244,242 @@
     }
 
     .screen h2 {
-        font-size: 34px;
-    }
-
-    .blocks {
-        margin-top: 25px;
-    }
-
-    .blocks b {
-        height: 40px;
+        font-size: clamp(29px, 8vw, 38px);
     }
 
     .float {
-        padding: 9px 11px;
-        transform: scale(.82);
+        transform: scale(.8);
     }
 
-    .f1 {
-        right: -5px;
-        top: 35px;
-    }
 
-    .f2 {
-        left: -5px;
-        bottom: 20px;
-    }
+    /* ==========================
+       THEME CARDS
+       2 + 1 layout maintained
+    ========================== */
 
     .themes {
-        padding: 65px 20px 75px;
+        padding: 65px 18px 75px;
     }
 
     .heading h2,
     .about h2 {
-        font-size: clamp(38px, 11vw, 48px);
+        font-size: clamp(38px, 10vw, 48px);
     }
 
     .grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .preview {
-        height: 250px;
+        height: 220px;
+        padding: 15px;
+    }
+
+    .pbody {
+        margin-top: 35px;
+    }
+
+    .pbody strong {
+        font-size: clamp(24px, 6vw, 34px);
     }
 
     .info {
-        padding: 18px;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+        padding: 14px;
+    }
+
+    .info>b {
+        font-size: 19px;
     }
 
     .info h3 {
-        font-size: 20px;
+        font-size: clamp(16px, 4.5vw, 21px);
     }
 
+    .info p {
+        font-size: 9px;
+    }
+
+    .info button {
+        padding: 8px 9px;
+        font-size: 9px;
+    }
+
+
+    /* ==========================
+       ABOUT
+    ========================== */
+
     .about {
-        padding: 65px 20px;
+        padding: 65px 18px;
+        gap: 25px;
     }
 
     .aboutmark {
-        width: 115px;
-        height: 115px;
+        width: clamp(100px, 25vw, 120px);
+        height: clamp(100px, 25vw, 120px);
     }
 
     .principles {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .principles div {
-        width: 100%;
+        flex: 1;
+        min-width: 145px;
     }
 
+
+    /* ==========================
+       CTA
+       Same horizontal interface
+    ========================== */
+
     .cta {
-        padding: 75px 20px;
+        padding: clamp(65px, 15vw, 90px) 18px;
     }
 
     .cta h2 {
-        font-size: clamp(40px, 11vw, 58px);
+        font-size: clamp(38px, 10vw, 58px);
+        line-height: 1.05;
+        margin: 15px auto 25px;
     }
-
 
     .cta-contact {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
-        gap: 7px;
-        flex-wrap: nowrap;
+        gap: clamp(4px, 2vw, 10px);
         width: 100%;
     }
 
     .cta-contact .btn {
+        flex: 1;
         min-width: 0;
         width: auto;
-        flex: 1;
         max-width: none;
-        padding: 10px 7px;
-        font-size: 10px;
+        padding: clamp(8px, 2vw, 11px) clamp(5px, 2vw, 12px);
+        font-size: clamp(8px, 2.5vw, 11px);
         justify-content: center;
         white-space: nowrap;
     }
 
     .cta-contact .btn i {
-        font-size: 11px;
+        font-size: clamp(9px, 2.8vw, 14px);
     }
 
 
+    /* Footer */
     footer {
-        padding: 20px;
+        padding: 20px 18px;
         flex-direction: column;
-        gap: 8px;
+        gap: 7px;
         text-align: center;
     }
 }
 
 
-/* Very Small Mobile */
+/* ---------- VERY SMALL PHONES ---------- */
+
 @media (max-width: 380px) {
 
+    .nav {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .brand {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .brand-logo {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .navbtn {
+        padding: 7px 8px;
+        font-size: 8px;
+    }
+
+    .menu {
+        font-size: 19px;
+    }
+
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .hero h1 {
-        font-size: 43px;
+        font-size: 42px;
     }
 
-    .art {
-        min-height: 310px;
+    .themes {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
-    .screen {
-        min-height: 250px;
-        padding: 18px;
+    .grid {
+        gap: 8px;
     }
 
-    .screen h2 {
-        font-size: 29px;
+    .preview {
+        height: 190px;
+        padding: 12px;
     }
 
-    .float {
-        transform: scale(.72);
+    .pbody strong {
+        font-size: 22px;
+    }
+
+    .info {
+        padding: 11px;
+    }
+
+    .info h3 {
+        font-size: 15px;
+    }
+
+    .info p {
+        font-size: 8px;
+    }
+
+    .info button {
+        font-size: 8px;
+        padding: 7px;
+    }
+
+    .cta {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
     }
 
     .cta-contact {
-        gap: 4px;
+        gap: 3px;
     }
-    
+
     .cta-contact .btn {
-        padding: 9px 4px;
-        font-size: 9px;
+        padding: 8px 3px;
+        font-size: 7.5px;
     }
-    
+
     .cta-contact .btn i {
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 
+    
 
 
 /* Company Logo */
