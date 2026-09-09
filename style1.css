@@ -153,9 +153,14 @@
         height: 46px;
     }
 
+@media (max-width: 600px) {
     .navbtn {
-        display: none;
+        display: inline-flex;
+        padding: 8px 11px;
+        font-size: 10px;
+        white-space: nowrap;
     }
+}
 
     .menu {
         margin-left: auto;
@@ -314,16 +319,32 @@
         font-size: clamp(40px, 11vw, 58px);
     }
 
+
     .cta-contact {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        flex-wrap: nowrap;
         width: 100%;
     }
 
     .cta-contact .btn {
-        width: 100%;
-        max-width: 260px;
+        min-width: 0;
+        width: auto;
+        flex: 1;
+        max-width: none;
+        padding: 10px 7px;
+        font-size: 10px;
         justify-content: center;
+        white-space: nowrap;
     }
+
+    .cta-contact .btn i {
+        font-size: 11px;
+    }
+
 
     footer {
         padding: 20px;
@@ -367,10 +388,21 @@
         transform: scale(.72);
     }
 
+    .cta-contact {
+        gap: 4px;
+    }
+    
     .cta-contact .btn {
-        max-width: 230px;
+        padding: 9px 4px;
+        font-size: 9px;
+    }
+    
+    .cta-contact .btn i {
+        font-size: 10px;
     }
 }
+
+
 
 /* Company Logo */
 .brand {
