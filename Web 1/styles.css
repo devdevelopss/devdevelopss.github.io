@@ -70,12 +70,177 @@ a{color:inherit;text-decoration:none}
 .interests{background:var(--lavender);max-width:none;padding-left:max(28px,calc((100vw - 1124px)/2));padding-right:max(28px,calc((100vw - 1124px)/2))}
 .interest-list{display:flex;flex-wrap:wrap;gap:10px;max-width:850px}
 .interest-list span{background:rgba(255,255,255,.65);border-color:rgba(110,100,125,.18)}
-.contact{padding:110px 28px;text-align:center;background:var(--sage)}
-.contact .section-label{color:#536a60}
-.contact h2{font-family:"Playfair Display",serif;font-size:clamp(45px,7vw,78px);line-height:1.05;margin:20px auto 35px}
-.contact-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.contact-links a{background:rgba(255,255,255,.62);padding:10px 15px;border-radius:9px;font-size:12px}
-.bottom-download{margin-top:30px;background:var(--ink)}
+
+/* =========================
+   RESPONSIVE CTA SECTION
+   ========================= */
+
+.contact{
+  width:100%;
+  padding:clamp(70px,9vw,120px) 28px;
+  text-align:center;
+  background:var(--sage);
+  overflow:hidden;
+}
+
+.contact .section-label{
+  color:#536a60;
+  font-size:clamp(10px,1vw,12px);
+  margin-bottom:18px;
+}
+
+.contact h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(42px,6vw,78px);
+  line-height:1.05;
+  letter-spacing:-.035em;
+  margin:20px auto 35px;
+  max-width:900px;
+}
+
+.contact-links{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.contact-links a{
+  background:rgba(255,255,255,.62);
+  padding:10px 15px;
+  border-radius:9px;
+  font-size:clamp(11px,1.1vw,13px);
+  white-space:nowrap;
+  transition:.2s ease;
+}
+
+.contact-links a:hover{
+  transform:translateY(-2px);
+  background:#fff;
+}
+
+.bottom-download{
+  margin:30px auto 0;
+  background:var(--ink);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 20px;
+  font-size:13px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:850px){
+
+  .contact{
+    padding:80px 22px;
+  }
+
+  .contact h2{
+    font-size:clamp(40px,7vw,58px);
+    max-width:700px;
+    margin-bottom:30px;
+  }
+
+  .contact-links{
+    max-width:650px;
+    gap:9px;
+  }
+
+  .contact-links a{
+    padding:9px 13px;
+    font-size:11px;
+  }
+
+  .bottom-download{
+    margin-top:28px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:500px){
+
+  .contact{
+    padding:65px 18px;
+  }
+
+  .contact .section-label{
+    font-size:9px;
+    margin-bottom:14px;
+  }
+
+  .contact h2{
+    font-size:clamp(36px,11vw,48px);
+    line-height:1.08;
+    letter-spacing:-.03em;
+    margin:15px auto 28px;
+  }
+
+  .contact-links{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:7px;
+  }
+
+  .contact-links a{
+    padding:9px 11px;
+    font-size:10px;
+    border-radius:8px;
+  }
+
+  .bottom-download{
+    width:auto;
+    max-width:100%;
+    margin-top:25px;
+    padding:11px 17px;
+    font-size:11px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media(max-width:360px){
+
+  .contact{
+    padding:55px 14px;
+  }
+
+  .contact h2{
+    font-size:34px;
+  }
+
+  .contact-links{
+    gap:6px;
+  }
+
+  .contact-links a{
+    font-size:9px;
+    padding:8px 9px;
+  }
+
+  .bottom-download{
+    font-size:10px;
+    padding:10px 14px;
+  }
+}
+
 footer{padding:25px 28px;display:flex;justify-content:space-between;max-width:1180px;margin:auto;color:var(--muted);font-size:10px;letter-spacing:.06em}
 @media(max-width:850px){
   .nav nav{display:none}.nav-inner{padding:15px 20px}.nav-btn{margin-left:auto}
