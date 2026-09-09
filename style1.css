@@ -42,3 +42,32 @@
     height: 75%;
     object-fit: contain;
 }
+
+
+
+.cta-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cta-contact .btn {
+    min-width: 145px;
+    justify-content: center;
+}
+
+.cta-contact .btn i {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .cta-contact {
+        flex-direction: column;
+    }
+
+    .cta-contact .btn {
+        width: 210px;
+    }
+}
