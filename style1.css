@@ -6,7 +6,190 @@
 
 .about{background:#fbf8f2;border-top:1px solid #e7e1d8;padding:95px max(28px,calc((100vw - 1144px)/2));display:grid;grid-template-columns:190px 1fr;gap:65px}.aboutmark{width:115px;height:115px;border-radius:50%;background:#dce8df;display:grid;place-items:center;font:700 31px 'Playfair Display';color:#617b6e}.aboutmark span{font-size:17px;color:#283333;position:absolute;margin:60px 0 0 55px}.principles{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.principles div{background:#fff;border:1px solid #e7e1d8;border-radius:12px;padding:12px 14px;font-size:10px;color:#717977}.principles b{color:#617b6e;margin-right:7px}.cta{padding:110px 28px;text-align:center;background:#dce8df}.cta h2{font-size:clamp(44px,6.5vw,75px);margin:18px auto 30px}.cta .eyebrow{color:#617b6e}footer{max-width:1200px;margin:auto;padding:24px 28px;display:flex;justify-content:space-between;color:#717977;font-size:10px}
 
-.modal{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:22px}.modal.open{display:flex}.shade{position:absolute;inset:0;background:#28333372;backdrop-filter:blur(7px)}.modalbox{position:relative;z-index:2;width:min(560px,100%);background:#fffdf9;border-radius:22px;padding:31px;box-shadow:0 30px 80px #28333330}.close{position:absolute;right:18px;top:15px;border:0;background:#f3f0ea;width:33px;height:33px;border-radius:50%;font-size:22px;cursor:pointer}.modalbox h2{font:600 39px 'Playfair Display';margin:12px 0 20px}.modalview{height:245px;border-radius:14px;background:#e7f0eb;padding:31px}.modalview small{font-size:8px;letter-spacing:.14em;color:#617b6e;font-weight:700}.modalview strong{display:block;font:600 42px/1.05 'Playfair Display';margin:15px 0}.modalview i{font-style:normal;color:#617b6e}.modalview button{border:0;background:#283333;color:#fff;padding:9px 13px;border-radius:8px;font-size:9px}.modalbox>p:not(.eyebrow){font-size:12px;color:#717977}.mobile{max-height:0;overflow:hidden;padding:0 22px;transition:.3s}.mobile.open{max-height:150px;padding:7px 22px 15px}.mobile a{display:block;padding:6px;color:#717977;font-size:12px}
+/* =========================
+   RESPONSIVE MODAL
+   ========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 4vw, 30px);
+    overflow-y: auto;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.shade {
+    position: absolute;
+    inset: 0;
+    background: #28333372;
+    backdrop-filter: blur(7px);
+}
+
+.modalbox {
+    position: relative;
+    z-index: 2;
+
+    width: min(560px, 100%);
+    max-height: calc(100vh - 24px);
+
+    background: #fffdf9;
+    border-radius: clamp(15px, 3vw, 22px);
+    padding: clamp(20px, 5vw, 31px);
+
+    box-shadow: 0 30px 80px #28333330;
+
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: clamp(12px, 3vw, 18px);
+    top: clamp(10px, 2vw, 15px);
+
+    border: 0;
+    background: #f3f0ea;
+
+    width: clamp(30px, 8vw, 33px);
+    height: clamp(30px, 8vw, 33px);
+
+    border-radius: 50%;
+    font-size: clamp(18px, 5vw, 22px);
+    cursor: pointer;
+}
+
+.modalbox h2 {
+    font: 600 clamp(27px, 6vw, 39px)/1.1 'Playfair Display';
+    margin: 8px 45px 16px 0;
+}
+
+.modalview {
+    height: clamp(170px, 42vw, 245px);
+    min-height: 170px;
+
+    border-radius: clamp(10px, 2vw, 14px);
+    background: #e7f0eb;
+
+    padding: clamp(20px, 5vw, 31px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.modalview small {
+    font-size: clamp(7px, 2vw, 8px);
+    letter-spacing: .14em;
+    color: #617b6e;
+    font-weight: 700;
+}
+
+.modalview strong {
+    display: block;
+    font: 600 clamp(30px, 8vw, 42px)/1.05 'Playfair Display';
+    margin: clamp(10px, 3vw, 15px) 0;
+}
+
+.modalview i {
+    font-style: normal;
+    color: #617b6e;
+}
+
+.modalview button {
+    align-self: flex-start;
+    border: 0;
+    background: #283333;
+    color: #fff;
+
+    padding: clamp(8px, 2vw, 9px) clamp(11px, 3vw, 13px);
+    border-radius: 8px;
+
+    font-size: clamp(8px, 2vw, 9px);
+}
+
+.modalbox > p:not(.eyebrow) {
+    font-size: clamp(10px, 2.5vw, 12px);
+    color: #717977;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SMALL MOBILE SCREENS
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modalbox {
+        width: 100%;
+        max-height: calc(100vh - 24px);
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .modalbox h2 {
+        font-size: clamp(25px, 7vw, 32px);
+        margin-right: 38px;
+    }
+
+    .modalview {
+        height: clamp(160px, 45vw, 210px);
+        padding: 18px;
+    }
+
+    .modalview strong {
+        font-size: clamp(27px, 8vw, 36px);
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media (max-width: 380px) {
+
+    .modal {
+        padding: 8px;
+    }
+
+    .modalbox {
+        padding: 17px;
+        border-radius: 14px;
+    }
+
+    .modalbox h2 {
+        font-size: 24px;
+    }
+
+    .modalview {
+        height: 150px;
+        padding: 15px;
+    }
+
+    .modalview strong {
+        font-size: 26px;
+        margin: 9px 0;
+    }
+
+    .modalbox > p:not(.eyebrow) {
+        font-size: 10px;
+    }
+}
+
+
 
 /* ==========================
    RESPONSIVE DESIGN
@@ -373,6 +556,21 @@
     .cta-contact .btn i {
         font-size: clamp(9px, 2.8vw, 14px);
     }
+    
+    
+    .theme-price {
+        margin-top: 9px;
+        gap: 4px;
+    }
+
+    .theme-price span {
+        font-size: 7px;
+    }
+
+    .theme-price strong {
+        font-size: 16px;
+    }
+
 
 
     /* Footer */
@@ -479,8 +677,6 @@
     }
 }
 
-    
-
 
 /* Company Logo */
 .brand {
@@ -531,3 +727,27 @@
 .cta-contact .btn i {
     font-size: 14px;
 }
+
+
+
+
+/* Theme Price */
+.theme-price {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin-top: 13px;
+}
+
+.theme-price span {
+    font-size: 9px;
+    color: #8a918e;
+}
+
+.theme-price strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #617b6e;
+    white-space: nowrap;
+}
+                                                                                                                                                                                                                                                                                                                                                                                                           }
